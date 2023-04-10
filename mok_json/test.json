@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+		"date": "2023-04-01 12:34:00.0000",
+		"type": "private",
+		"name": "How are things",
+		"members": ["Evgeniy", "Sergey"],
+		"place": "zoom"
+	},
+    {
+		"date": "2023-04-02 08:09:00.0000",
+		"type": "meeting",
+		"name": "No problem",
+		"members": ["Pavel", "Anastasia"],
+		"place": "telegram"
+	},
+    {
+		"date": "2023-04-03 11:43:00.0000",
+		"type": "other",
+		"name": "Heroes of Russia on the pages of print",
+		"members": ["Stepan", "Nikita"],
+		"place": "zoom"
+	},
+	{
+		"date": "2023-04-04 12:42:00.0000",
+		"type": "private",
+		"name": "They are forever grateful to the descendants",
+		"members": ["Ivan", "Elena"],
+		"place": "telegram"
+	},
+    {
+		"date": "2023-04-05 12:42:00.0000",
+		"type": "private",
+		"name": "They are! forever grateful to the descendants",
+		"members": ["Anna", "Katya"],
+		"place": "telegram"
+	},
+    {
+		"date": "2023-04-01 05:34:00.0000",
+		"type": "meeting",
+		"name": "Beats me",
+		"members": ["Julia", "Vycheslav"],
+		"place": "zoom"
+	},
+    {
+		"date": "2023-04-02 09:42:00.0000",
+		"type": "private",
+		"name": "To make matters worse…",
+		"members": ["Alena", "Kamila"],
+		"place": "zoom"
+    },
+	{
+		"date": "2023-04-03 06:01:00.0000",
+		"type": "meeting",
+		"name": "Hang in there",
+		"members": ["Andrey", "Alexandr"],
+		"place": "telegram"
+	},
+	{
+		"date": "2023-04-04 03:55:00.0000",
+		"type": "other",
+		"name": "Freak out",
+		"members": ["Natasha", "Irina"],
+		"place": "telegram"
+	},
+    {
+		"date": "2023-04-05 01:30:00.0000",
+		"type": "private",
+		"name": "Make sure to bundle up",
+		"members": ["Polina", "Diana"],
+		"place": "telegram"
+	}
+  ]
+}
