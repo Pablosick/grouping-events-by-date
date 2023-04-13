@@ -58,5 +58,4 @@ class EventsHandler:
 
     def __output_json(self, json_structure):
         with open(self.o_json, 'w',  encoding='utf8') as output_json:
-            result_dict_in_json = json.dump(json_structure, output_json)
-        return result_dict_in_json
+            json.dump(json_structure, output_json, indent=4)
