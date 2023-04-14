@@ -40,6 +40,8 @@ class EventsGeneration:
                 self.__type_generation(input_dict)
             elif keys == "name":
                 self.__name_generation(input_dict)
+            elif keys == "members":
+                self.__members_generation(input_dict)
             elif keys == "place":
                 self.__place_generation(input_dict)
         return input_dict
@@ -63,13 +65,20 @@ class EventsGeneration:
         return name_key
 
 
+    def __members_generation(self, members_key):
+        members_key["members"] = [self.__fake.first_name() for i in range(random.randint(0, 10))]
+        return members_key
+
+
     def __place_generation(self, place_key):
         rand_place = ["telegram", "zoom", ''.join(random.choice(string.ascii_lowercase) for j in range(random.randint(0, 15)))]
-        place_key["place"] = rand_place
+        place_key["place"] = random.choice(rand_place)
         return place_key
 
 
     def __convert_to_json_file(self, final_dictionary):
         with open('./mok_json/generator.json', 'w') as g_json:
             json.dump(final_dictionary, g_json, indent=4)
+
+
 
