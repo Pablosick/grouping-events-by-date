@@ -21,9 +21,13 @@ class EventsGeneration:
 
 
     def generation_json(self):
+        """
+        The function generates random events
+        :return: Dict
+        """
         result_dictionary = self.main_dictionary_generation()
-        return self.__convert_to_json_file(result_dictionary)
-
+        # return self.__convert_to_json_file(result_dictionary)
+        return result_dictionary
 
     def main_dictionary_generation(self):
         for rand_events in range(random.randint(1,  50)):

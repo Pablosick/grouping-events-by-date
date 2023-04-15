@@ -1,5 +1,3 @@
-import json
-
 import datetime
 
 from src.enums.type_events_enum import EventType
@@ -9,28 +7,20 @@ class EventsHandler:
 
     __result_json = {}
 
-    def __init__(self, input_json, o_json):
-        self.input_json = input_json
-        self.o_json = o_json
 
-
-    def get_result(self):
+    def working_with_events(self, raw_list):
         """
-        The function returns a grouped list of events by date
-        :return: JSON
+        The function starts the algorithm for working with events
+        :param raw_list: List
+        :return: Dict
         """
-        raw_list_events = self.__running_raw_json()
-        return self.__working_with_events(raw_list_events)
-
-
-    def __working_with_events(self, raw_list):
         for item in range(len(raw_list)):
             if self.__validate_keys(raw_list[item]) == raw_list[item]:
                 self.__result_json.setdefault(self.__date_keys(raw_list[item]), [])
                 self.__result_json[self.__date_keys(raw_list[item])].append(raw_list[item])
                 self.__result_json[self.__date_keys(raw_list[item])] = sorted(self.__result_json[self.__date_keys(raw_list[
-                                                                                                                   item])], key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S.%f'), reverse=False)
-        return self.__output_json(self.__result_json)
+                                                                                                                   item])], key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'), reverse=False)
+        return self.__result_json
 
 
     def __validate_keys(self, event):
@@ -46,16 +36,6 @@ class EventsHandler:
 
 
     def __date_keys(self, event):
-        new_keys_json = datetime.datetime.strptime(event['date'], '%Y-%m-%d %H:%M:%S.%f')
+        new_keys_json = datetime.datetime.strptime(event['date'], '%Y-%m-%d %H:%M:%S')
         return str(new_keys_json.date())
 
-
-    def __running_raw_json(self):
-        with open(self.input_json, 'r', encoding='utf8') as raw_json:
-            json_in_dict = json.load(raw_json)['events']
-        return json_in_dict
-
-
-    def __output_json(self, json_structure):
-        with open(self.o_json, 'w',  encoding='utf8') as output_json:
-            json.dump(json_structure, output_json, indent=4)
