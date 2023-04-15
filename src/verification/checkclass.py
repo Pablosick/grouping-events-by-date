@@ -10,7 +10,7 @@ class Check:
 
     def check_validate(self, schema):
         if isinstance(self.query_events, list):
-            for item in range(len(self.query)):
+            for item in self.query_events:
                 schema.parse_obj(item)
         else:
             schema.parse_obj(self.query_events)
