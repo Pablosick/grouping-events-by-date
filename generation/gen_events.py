@@ -1,5 +1,4 @@
 import datetime
-import json
 import random
 import string
 
@@ -26,7 +25,6 @@ class EventsGeneration:
         :return: Dict
         """
         result_dictionary = self.main_dictionary_generation()
-        # return self.__convert_to_json_file(result_dictionary)
         return result_dictionary
 
     def main_dictionary_generation(self):
@@ -78,11 +76,3 @@ class EventsGeneration:
         rand_place = ["telegram", "zoom", ''.join(random.choice(string.ascii_lowercase) for j in range(random.randint(0, 15)))]
         place_key["place"] = random.choice(rand_place)
         return place_key
-
-
-    def __convert_to_json_file(self, final_dictionary):
-        with open('./mok_json/generator.json', 'w') as g_json:
-            json.dump(final_dictionary, g_json, indent=4)
-
-
-
