@@ -1,4 +1,3 @@
-from src.schmas.event import Event
 
 
 class Check:
