@@ -38,4 +38,3 @@ class EventsHandler:
     def __date_keys(self, event):
         new_keys_json = datetime.datetime.strptime(event['date'], '%Y-%m-%d %H:%M:%S')
         return str(new_keys_json.date())
-
