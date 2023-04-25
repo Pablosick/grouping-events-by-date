@@ -16,5 +16,7 @@ def get_events():
 
 @pytest.fixture(scope="function")
 def res_get_events():
-    output_data = group_data.working_with_events(correct_data.generation_json()["events"])
+    output_data = group_data.working_with_events(
+        correct_data.generation_json()["events"]
+    )
     return output_data

@@ -1,11 +1,7 @@
-
-
-class Check:
-
+class InputValidation:
     def __init__(self, query):
         self.query = query
         self.query_events = query["events"]
-
 
     def check_validate(self, schema):
         if isinstance(self.query_events, list):
