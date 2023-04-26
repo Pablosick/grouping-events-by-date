@@ -25,7 +25,8 @@ class EventsHandler:
                     ),
                     reverse=False,
                 )
-        return self.__result_json
+        ready_dictionary = dict(sorted(self.__result_json.items()))
+        return ready_dictionary
 
     def __validate_keys(self, event):
         validate_type = (

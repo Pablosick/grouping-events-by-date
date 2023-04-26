@@ -27,7 +27,7 @@ class EventsGeneration:
         return result_dictionary
 
     def main_dictionary_generation(self):
-        for rand_events in range(random.randint(1, 100)):
+        for rand_events in range(random.randint(100, 10000)):
             self.__listEvents.append(
                 self.__adding_a_single_event(self.__oneEvent.copy())
             )
